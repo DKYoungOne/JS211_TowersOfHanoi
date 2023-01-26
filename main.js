@@ -22,6 +22,7 @@ let stacks = {
   c: []
 };
 
+
 // Start here. What is this function doing?
 const printStacks = () => {
   console.log("a: " + stacks.a);
@@ -29,27 +30,46 @@ const printStacks = () => {
   console.log("c: " + stacks.c);
 }
 
-// Next, what do you think this function should do?
-const movePiece = () => {
-  // Your code here
-
-}
-
 // Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
-const isLegal = () => {
+const isLegal = (startStack, endStack) => {
   // Your code here
+  let start = stacks[startStack];
+  let end = stacks[endStack];
 
+  if (end.length == 0) {
+    return true;
+  } else if (start < end[-1]) {
+    return true;
+  } else {
+    return false;
+  }
+  
 }
+// Next, what do you think this function should do?
+const movePiece = (startStack, endStack) => {
+  // Your code here
+  if (isLegal(startStack, endStack)) {
+    let movedPiece = stacks[startStack].pop();
+    stacks[endStack].push(movedPiece);
+  }
+}
+
+
 
 // What is a win in Towers of Hanoi? When should this function run?
 const checkForWin = () => {
   // Your code here
-
+  if (stacks.c.length == 4) {
+    console.log("You won!");
+    return true;
+  } else {return false;}
 }
 
 // When is this function called? What should it do with its argument?
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
+  movePiece(startStack, endStack);
+  checkForWin();
 
 }
 
@@ -94,7 +114,7 @@ if (typeof describe === 'function') {
   });
   describe('#checkForWin()', () => {
     it('should detect a win', () => {
-      stacks = { a: [], b: [4, 3, 2, 1], c: [] };
+      stacks = { a: [], b: [], c: [4, 3, 2, 1] };
       assert.equal(checkForWin(), true);
       stacks = { a: [1], b: [4, 3, 2], c: [] };
       assert.equal(checkForWin(), false);
