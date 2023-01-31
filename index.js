@@ -90,6 +90,6 @@ const isLegal = (rowID) => {
 const detectWin = () => {
   const winningRow = document.getElementById('top-row');
   if (winningRow.childElementCount == 4) {
-    alert('You won!! Refresh the page to reload')
+    alert('You won!! Refresh the page to play again!')
   }
 }
