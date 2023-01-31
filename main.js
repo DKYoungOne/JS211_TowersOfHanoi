@@ -35,12 +35,18 @@ const isLegal = (startStack, endStack) => {
   // Your code here
   let start = stacks[startStack];
   let end = stacks[endStack];
+  let startPiece = start.at(-1);
+  let endPiece = end.at(-1);
+  console.log('Start' + startPiece);
+  console.log('End' + endPiece);
 
-  if (end.length == 0) {
+// Logic to determine if the move is legal using the number values of the "blocks" in the stacks object
+  if (stacks[endStack].length == 0) {
     return true;
-  } else if (start < end[-1]) {
+  } else if (start.at(-1) < end.at(-1)) {
     return true;
   } else {
+    console.log(start + 'is not less than' + end);
     return false;
   }
   
@@ -48,6 +54,8 @@ const isLegal = (startStack, endStack) => {
 // Next, what do you think this function should do?
 const movePiece = (startStack, endStack) => {
   // Your code here
+  // Logic to check if the move is legal BEFORE moving the piece to the new area, this logic works for tests, but will have to altered a little bit to fit
+  // with the gui and html, potentially may need to split this function into to separate functions with a global variable to keep the information in the global scope.
   if (isLegal(startStack, endStack)) {
     let movedPiece = stacks[startStack].pop();
     stacks[endStack].push(movedPiece);
@@ -59,6 +67,8 @@ const movePiece = (startStack, endStack) => {
 // What is a win in Towers of Hanoi? When should this function run?
 const checkForWin = () => {
   // Your code here
+  
+  // Step one: make sure the win condition is working.
   if (stacks.c.length == 4) {
     console.log("You won!");
     return true;
@@ -68,6 +78,7 @@ const checkForWin = () => {
 // When is this function called? What should it do with its argument?
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
+  //Whenever towersOfHanoi() is called, move the piece first (which already checks for legal moves) and then check for a win.
   movePiece(startStack, endStack);
   checkForWin();
 
@@ -110,6 +121,15 @@ if (typeof describe === 'function') {
         c: []
       };
       assert.equal(isLegal('a', 'c'), true);
+    });
+    //added test 1
+    it('should allow a legal move', () => {
+      stacks = {
+        a: [],
+        b: [1],
+        c: [4, 3, 2]
+      };
+      assert.equal(isLegal('b', 'c'), true);
     });
   });
   describe('#checkForWin()', () => {

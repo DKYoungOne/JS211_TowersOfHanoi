@@ -1,3 +1,33 @@
+# Code Plan
+
+# main.js
+1. Work on Win condition, then work backwards. *done*
+2. Work on isLegal() and make that work before being able to move a piece *done*
+3. Implement isLegal() into movePiece() and make sure that passes tests *done*
+# index.js
+4. Look at index.js and see what needs to be changed, moved around or altered in the code.
+5. Implement the logic of main.js into index.js so it can be utilized by index.html
+6. Once index.js is finalized, work on the index.js implementation to index.html.
+7. Profit??
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # JS211_Towers of Hanoi[![CircleCI](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages.svg?style=svg)](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages)
 
 ![](http://en.gravatar.com/userimage/107370100/a08594145564536138dfaaf072c7b241.png)
@@ -16,10 +46,10 @@ Your checkpoint is really a terminal app; which is what you'll be graded on. How
 
 <!-- This is for their personal navigation through the project. They can go through and make sure they get each thing and can comb over it later.  -->
 
-1. 20pts - **Code Plan** - Include this in a `README.md` file in your folder with comments in your code
-1. 10pts - **Move Blocks** - User can move "blocks" from column to column
-1. 20pts - **Illegal Moves** - Prevents larger blocks from stacking on smaller blocks
-1. 20pts - **Notifies winner** - When all the blocks are stacked into column 2 or 1 the user is alerted they won!
+1. 20pts - **Code Plan** - Include this in a `README.md` file in your folder with comments in your code *done*
+1. 10pts - **Move Blocks** - User can move "blocks" from column to column *done in main.js tests*
+1. 20pts - **Illegal Moves** - Prevents larger blocks from stacking on smaller blocks *done in main.js tests*
+1. 20pts - **Notifies winner** - When all the blocks are stacked into column 2 or 1 the user is alerted they won! *done in main.js tests*
 1. 20pts - **Minimum 3 Unit Tests** - Should be attached to your file the same way Tic, Tac, Toe, PigLatin or Rock Paper Scissors is done.
 1. 10pts - **Graphical User Interface** - Take this game out of the terminal by adding a User Interface that uses `towersOfHanoi()` function in `index.js`.
 
