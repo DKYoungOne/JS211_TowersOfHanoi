@@ -37,8 +37,8 @@ const isLegal = (startStack, endStack) => {
   let end = stacks[endStack];
   let startPiece = start.at(-1);
   let endPiece = end.at(-1);
-  console.log('Start' + startPiece);
-  console.log('End' + endPiece);
+  console.log('Start: ' + startPiece);
+  console.log('End: ' + endPiece);
 
 // Logic to determine if the move is legal using the number values of the "blocks" in the stacks object
   if (stacks[endStack].length == 0) {
@@ -46,7 +46,7 @@ const isLegal = (startStack, endStack) => {
   } else if (start.at(-1) < end.at(-1)) {
     return true;
   } else {
-    console.log(start + 'is not less than' + end);
+    
     return false;
   }
   
@@ -122,7 +122,7 @@ if (typeof describe === 'function') {
       };
       assert.equal(isLegal('a', 'c'), true);
     });
-    //added test 1
+    //Added test 1
     it('should allow a legal move', () => {
       stacks = {
         a: [],
@@ -131,12 +131,24 @@ if (typeof describe === 'function') {
       };
       assert.equal(isLegal('b', 'c'), true);
     });
+    //Added Test 3
+    it('should allow a legal move', () => {
+      stacks = {
+        a: [4, 3, 2],
+        b: [1],
+        c: []
+      };
+      assert.equal(isLegal('a', 'c'), true);
+    })
   });
   describe('#checkForWin()', () => {
     it('should detect a win', () => {
       stacks = { a: [], b: [], c: [4, 3, 2, 1] };
       assert.equal(checkForWin(), true);
       stacks = { a: [1], b: [4, 3, 2], c: [] };
+      assert.equal(checkForWin(), false);
+      // Added test 2
+      stacks = { a: [4, 3, 2, 1], b: [], c: [] };
       assert.equal(checkForWin(), false);
     });
   });

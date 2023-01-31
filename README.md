@@ -4,11 +4,14 @@
 1. Work on Win condition, then work backwards. *done*
 2. Work on isLegal() and make that work before being able to move a piece *done*
 3. Implement isLegal() into movePiece() and make sure that passes tests *done*
+4. Add 3 tests to main.js (will have comments stating they are added tests) *done*
 # index.js
-4. Look at index.js and see what needs to be changed, moved around or altered in the code.
-5. Implement the logic of main.js into index.js so it can be utilized by index.html
-6. Once index.js is finalized, work on the index.js implementation to index.html.
-7. Profit??
+5. Look at index.js and see what needs to be changed, moved around or altered in the code. *done*
+6. Implement the logic of main.js into index.js so it can be utilized by index.html *done*
+7. Once index.js is finalized, work on the index.js implementation to index.html. *done, technically already finished,*
+   *since DOM interaction is taken care of using JS.*
+8. Add win conditions using logic from main.js, add alert to winning move. *done, added a alert box that tells the player to refresh to play again.*
+9. Profit??
 
 
 
@@ -47,11 +50,11 @@ Your checkpoint is really a terminal app; which is what you'll be graded on. How
 <!-- This is for their personal navigation through the project. They can go through and make sure they get each thing and can comb over it later.  -->
 
 1. 20pts - **Code Plan** - Include this in a `README.md` file in your folder with comments in your code *done*
-1. 10pts - **Move Blocks** - User can move "blocks" from column to column *done in main.js tests*
-1. 20pts - **Illegal Moves** - Prevents larger blocks from stacking on smaller blocks *done in main.js tests*
-1. 20pts - **Notifies winner** - When all the blocks are stacked into column 2 or 1 the user is alerted they won! *done in main.js tests*
-1. 20pts - **Minimum 3 Unit Tests** - Should be attached to your file the same way Tic, Tac, Toe, PigLatin or Rock Paper Scissors is done.
-1. 10pts - **Graphical User Interface** - Take this game out of the terminal by adding a User Interface that uses `towersOfHanoi()` function in `index.js`.
+1. 10pts - **Move Blocks** - User can move "blocks" from column to column *done in main.js tests and on the gui*
+1. 20pts - **Illegal Moves** - Prevents larger blocks from stacking on smaller blocks *done in main.js tests and on the gui*
+1. 20pts - **Notifies winner** - When all the blocks are stacked into column 2 or 1 the user is alerted they won! *done in main.js tests and on the gui*
+1. 20pts - **Minimum 3 Unit Tests** - Should be attached to your file the same way Tic, Tac, Toe, PigLatin or Rock Paper Scissors is done. *done, they are also marked with comments*
+1. 10pts - **Graphical User Interface** - Take this game out of the terminal by adding a User Interface that uses `towersOfHanoi()` function in `index.js`. *it doesnt use the `towersOfHanoi()` from main.js but it effectively does the same thing. Everything works as intended.*
 
 * **Extended Practice Bonus!!**
   * Keeps count of moves as player plays games

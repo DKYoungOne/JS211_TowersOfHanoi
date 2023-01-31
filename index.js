@@ -38,20 +38,19 @@ let stone = null
 const selectRow = (row) => {
   const currentRow = document.getElementById(row)
 const rowID = row.id;
-  console.log("Yay, we clicked an item", currentRow)
+  // console.log("Yay, we clicked an item", currentRow)
   // console.log("Here is the stone's id: ", currentRow.id)
   // console.log("Here is the stone's data-size: ", currentRow)
   
   
-  moveStone(rowID);
-  console.log(stone);
+  
+  
   if (!stone) {
     pickUpStone(rowID);
   } else if (stone && isLegal(rowID)) {
-      
-      
-      dropStone(rowID)
-  } else {return console.log("Error")}
+      dropStone(rowID);
+      detectWin();
+  } else {return console.log("Error: Choose another row")}
   
 }
 
@@ -88,23 +87,9 @@ const isLegal = (rowID) => {
   }
 }
 
-const moveStone = (rowID) => {
-  const selectedRow = document.getElementById(rowID);
-//   if (isLegal(rowID, stone)) {
-//     if (!stone) {
-//       pickUpStone(rowID);
-//       console.log("Detecting null");
-//       console.log(stone)
-//     } else if (stone) {
-//       dropStone(rowID, stone);
-//       console.log("Detecting not null");
-//     } else {return console.log("Error")}
-//   }
-  // if (!stone) {
-  //   pickUpStone(rowID);
-  // } else if (stone && isLegal(rowID)) {
-      
-      
-  //     dropStone(rowID)
-  // } else {return console.log("Error")}
+const detectWin = () => {
+  const winningRow = document.getElementById('top-row');
+  if (winningRow.childElementCount == 4) {
+    alert('You won!! Refresh the page to reload')
+  }
 }
